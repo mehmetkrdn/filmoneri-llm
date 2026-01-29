@@ -1,24 +1,24 @@
 # filmoneri-llm
 
-# tmdb_fetch_tv.py — Dizi Verisi Toplama Scripti
+# tmdb_fetch_tv.py — Ham veri toplama
 
-Bu script, TMDB (The Movie Database) API kullanarak dizi öneri sistemi için gerekli olan ham dizi verilerini otomatik olarak toplamak amacıyla geliştirilmiştir. Projenin veri toplama aşamasındaki ilk adımı temsil eder.
+TMDB’den dizi listesini çeker
 
-Amaç
+Sadece temel bilgiler alır (ad, özet, puan vb.)
 
-tmdb_fetch_tv.py, TMDB üzerinde yer alan popüler dizileri belirli filtreler altında çekerek, öneri sisteminde kullanılacak aday dizi havuzunu oluşturur. Bu aşamada toplanan veriler daha sonra detaylandırılmak ve zenginleştirilmek üzere saklanır.
+Amaç: aday dizi havuzu oluşturmak
 
-Ne Yapar?
+ "Hangi diziler var?” sorusunun cevabını alırız.
 
-Script aşağıdaki işlemleri gerçekleştirir:
+# tmdb_enrich_tv.py — Veriyi zenginleştirme
 
-TMDB’nin Discover TV endpoint’ini kullanarak dizi listelerini çeker
+Veriyi zenginleştirmek için kullanırız
 
-Sayfalama (pagination) yaparak binlerce diziyi otomatik olarak toplar
+Ham dizi listesini alır (tmbd_fetch_tv.py dosyasından üretilen)
 
-Belirli bir oy sayısının (vote_count) altındaki dizileri filtreler
+Her dizi için TMDB’den detay bilgileri çeker
 
-Verileri satır satır JSON Lines (.jsonl) formatında kaydeder
+Tür isimleri, keyword’ler, sezon/bölüm sayısı, oyuncular vb. ekler
 
-Daha önce çekilmiş dizileri tekrar indirmez (kaldığı yerden devam edebilir)
+“Bu diziler ne anlatıyor?” sorusunun cevabını alırız.
 
