@@ -34,10 +34,4 @@ llm_titles.jsonl dosyasında: Her satır tek bir diziyi temsil eder
 
 doc_text alanı: Dizinin adı, Konusu,Türleri,Anahtar kelimeleri,Oyuncuları,Sezon / bölüm bilgileri,tek bir metin halinde içerir
 
- Bu metin:
-
-Embedding modeline verilir
-
-Benzerlik hesabının temelini oluşturur
-
-LLM’e bağlam (context) olarak sunulur
+Bu kod, zenginleştirilmiş dizi verisini LLM’in gerçekten “anlayabileceği” forma sokar ve her diziyi embedding + RAG için hazır hale getirir.
