@@ -41,6 +41,7 @@ Bu kod, zenginleştirilmiş dizi verisini LLM’in gerçekten “anlayabileceği
 Zenginleştirilmiş dizi verilerindeki (llm_titles.jsonl) metinleri embedding (sayısal vektör) haline getirir. Bu vektörler, diziler arası anlamsal benzerlik hesaplamak için kullanılır.
 
 Niçin kullandık?
+
 LLM ve öneri sistemlerinin metni doğrudan değil, sayısal temsil (embedding) üzerinden karşılaştırması gerektiği için.
 
 Nasıl çalıştırılır?
@@ -52,6 +53,7 @@ python build_embeddings.py --infile llm_data/llm_titles.jsonl --outdir embedding
 Üretilmiş embedding’leri kullanarak, kullanıcının verdiği metin sorgusuna en benzer dizileri (Top-K) cosine similarity ile bulur.
 
 Niçin kullandık?
+
 LLM’e gitmeden önce, aday dizileri hızlı ve matematiksel olarak doğru şekilde filtrelemek (retrieval aşaması) için.
 
 Nasıl çalıştırılır?
