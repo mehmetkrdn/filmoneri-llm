@@ -1,4 +1,4 @@
-# filmoneri-llm
+# LLM ile Dizi Öneri Sistemi
 
 # tmdb_fetch_tv.py — Ham veri toplama
 
@@ -60,4 +60,4 @@ Nasıl çalıştırılır?
 
 python recommend.py --store embedding --query "mafya suç karanlık" --k 5
 
-RAG kısmının 'R' kısmıdır. Retrieval, kullanıcının isteğine anlamsal olarak en yakın bilgi/dökümanları (bizde dizileri) bulma işlemidir.
+RAG kısmının 'R' kısmıdır. Retrieval, kullanıcının isteğine anlamsal olarak en yakın dizileri bulma işlemidir.
