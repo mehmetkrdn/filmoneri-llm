@@ -35,3 +35,27 @@ llm_titles.jsonl dosyasında: Her satır tek bir diziyi temsil eder
 doc_text alanı: Dizinin adı, Konusu,Türleri,Anahtar kelimeleri,Oyuncuları,Sezon / bölüm bilgileri,tek bir metin halinde içerir
 
 Bu kod, zenginleştirilmiş dizi verisini LLM’in gerçekten “anlayabileceği” forma sokar ve her diziyi embedding + RAG için hazır hale getirir.
+
+# build_embeddings.py ne yapıyor?
+
+Zenginleştirilmiş dizi verilerindeki (llm_titles.jsonl) metinleri embedding (sayısal vektör) haline getirir. Bu vektörler, diziler arası anlamsal benzerlik hesaplamak için kullanılır.
+
+Niçin kullandık?
+LLM ve öneri sistemlerinin metni doğrudan değil, sayısal temsil (embedding) üzerinden karşılaştırması gerektiği için.
+
+Nasıl çalıştırılır?
+
+python build_embeddings.py --infile llm_data/llm_titles.jsonl --outdir embedding
+
+# recommend.py ne yapıyor?
+
+Üretilmiş embedding’leri kullanarak, kullanıcının verdiği metin sorgusuna en benzer dizileri (Top-K) cosine similarity ile bulur.
+
+Niçin kullandık?
+LLM’e gitmeden önce, aday dizileri hızlı ve matematiksel olarak doğru şekilde filtrelemek (retrieval aşaması) için.
+
+Nasıl çalıştırılır?
+
+python recommend.py --store embedding --query "mafya suç karanlık" --k 5
+
+RAG kısmının 'R' kısmıdır. Retrieval, kullanıcının isteğine anlamsal olarak en yakın bilgi/dökümanları (bizde dizileri) bulma işlemidir.
